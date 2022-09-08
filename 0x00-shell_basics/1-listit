@@ -1,2 +1,2 @@
 #!/bin/bash
-echo "The command for listing contents is ls\n"
+ls
