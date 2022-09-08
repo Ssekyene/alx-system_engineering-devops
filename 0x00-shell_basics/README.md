@@ -1,2 +1,1 @@
- Printing working directory
- Script 2 for listing contents in the current directory
+script that prints the absolute path name of the current working directory

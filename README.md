@@ -1,1 +1,1 @@
-getting more familiar with shell basics
+Task 0.Where am I?
