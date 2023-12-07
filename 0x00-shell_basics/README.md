@@ -5,3 +5,7 @@
 2. Changes the working directory to the user’s home directory
 
 3. Displays current directory contents in a long format
+
+4. Displays current directory contents, including hidden files (starting with .)
+
+5. Display current directory contents in long format, with user and group IDs displayed numerically and with hidden files (starting with .)
