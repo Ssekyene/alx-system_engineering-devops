@@ -1,1 +1,1 @@
-Getting familiar with software engineering tools
+## Getting familiar with software engineering tools such as shell scripts
