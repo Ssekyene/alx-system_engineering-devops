@@ -1,4 +1,7 @@
-script that prints the absolute path name of the current working directory
-Display the contents list of your current directory
-script that changes the working directory to the user’s home directory
-Display current directory contents in a long format
+- Prints the absolute path name of the current working directory
+
+- Displays the content's list of your current directory
+
+- Changes the working directory to the user’s home directory
+
+- Displays current directory contents in a long format
