@@ -17,3 +17,5 @@
 8. Deletes the file "betty" from "/tmp/my_first_directory"
 
 9. Deletes the directory "my_first_directory" that is in the "/tmp" directory
+
+10. Changes the working directory to the previous one
