@@ -15,3 +15,5 @@
 7. Moves the file "betty" from "/tmp/" to "/tmp/my_first_directory"
 
 8. Deletes the file "betty" from "/tmp/my_first_directory"
+
+9. Deletes the directory "my_first_directory" that is in the "/tmp" directory
