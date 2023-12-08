@@ -20,3 +20,5 @@
 	- Other users: all the permissions
 
 9. Sets the mode of the file "hello" to "-rwxr-x-wx"
+
+10. Sets the mode of the file hello the same as olleh’s mode
