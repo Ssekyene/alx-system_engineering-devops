@@ -26,3 +26,5 @@
 11. Adds execute permission to all subdirectories of the current directory for the owner, the group owner and all other users
 
 12. Creates a directory called "my_dir" with permissions 751 in the working directory
+
+13. Changes the group owner to "school" for the file "hello"
