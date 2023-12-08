@@ -28,3 +28,5 @@
 12. Creates a directory called "my_dir" with permissions 751 in the working directory
 
 13. Changes the group owner to "school" for the file "hello"
+
+100. Changes the owner to "vincent" and the group owner to "staff" for all the files and directories in the working directory
