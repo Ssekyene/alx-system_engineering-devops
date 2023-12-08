@@ -30,3 +30,5 @@
 13. Changes the group owner to "school" for the file "hello"
 
 100. Changes the owner to "vincent" and the group owner to "staff" for all the files and directories in the working directory
+
+101. Changes the owner and the group owner of "_hello" to "vincent" and "staff" respectively. The file "hello" is a symbolic link.
