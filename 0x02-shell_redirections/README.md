@@ -23,3 +23,5 @@
 11. Counts the number of directories and sub-directories in the current directory
 
 12. Displays the 10 newest files in the current directory.
+
+13. Takes a list of words as input and prints only words that appear exactly once
