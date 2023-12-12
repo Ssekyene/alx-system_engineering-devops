@@ -1,2 +1,2 @@
 #!/bin/bash
-ls $1 | uniq -u
+echo "$1" | tr ' ' '\n' | sort | uniq -u
