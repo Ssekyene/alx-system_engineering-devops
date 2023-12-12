@@ -33,3 +33,5 @@
 16. Displays lines containing the pattern "root" and 3 lines after them in the file "/etc/passwd"
 
 17. Displays all the lines in the file "/etc/passwd" that do not contain the pattern "bin"
+
+18. Displays all lines of the file "/etc/ssh/sshd_config" starting with a letter. Includes capital letters as well.
