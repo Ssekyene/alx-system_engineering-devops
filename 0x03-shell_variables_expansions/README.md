@@ -24,3 +24,5 @@
 	- The script should display the number in base 10, followed by a new line
 
 12. Prints all possible combinations of two letters, except "oo"
+
+13. pri Prints a number with two decimal places, followed by a new line
