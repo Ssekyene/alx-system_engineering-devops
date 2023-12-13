@@ -30,3 +30,5 @@
 100. Converts a number from base 10 to base 16
 
 101 Encodes and decodes text using the rot13 encryption
+
+102. prints odd number of lines from the input, starting with the first line
