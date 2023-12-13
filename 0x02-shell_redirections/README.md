@@ -45,3 +45,5 @@
 22. Displays all users and their home directories, sorted by users, based on the the "/etc/passwd" file
 
 100. Finds all empty files and directories in the current directory and all sub-directories
+
+101. Lists all the files with a ".gif" extension in the current directory and all its sub-directories
