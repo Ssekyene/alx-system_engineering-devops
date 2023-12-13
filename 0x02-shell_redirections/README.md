@@ -37,3 +37,5 @@
 18. Displays all lines of the file "/etc/ssh/sshd_config" starting with a letter. Includes capital letters as well.
 
 19. Replaces all characters 'A' and 'c' from input to 'Z' and 'e' respectively
+
+20. Removes all letters 'c' and 'C' from input
