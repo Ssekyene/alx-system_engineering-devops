@@ -28,3 +28,5 @@
 13. pri Prints a number with two decimal places, followed by a new line
 
 100. Converts a number from base 10 to base 16
+
+101 Encodes and decodes text using the rot13 encryption
