@@ -39,3 +39,5 @@
 19. Replaces all characters 'A' and 'c' from input to 'Z' and 'e' respectively
 
 20. Removes all letters 'c' and 'C' from input
+
+21. Reverses its input
