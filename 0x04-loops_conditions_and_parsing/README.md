@@ -1,14 +1,5 @@
 # 0x04. Loops, conditions and parsing
+|File					|Description						|
+|-----------------------------|-----------------------------------------------|
+|0-RSA_public_key.pub		|contains a public key of SSH key pair generated using `ssh-keygen command` |
 
-* DevOps
-* Shell
-* Bash
-* Scripting
-
-## General 
-* How to create SSH keys
-* What is the advantage of using #!/usr/bin/env bash over #!/bin/bash
-* How to use while, until and for loops
-* How to use if, else, elif and case condition statements
-* How to use the cut command
-* What are files and other comparison operators, and how to use them
