@@ -12,4 +12,5 @@
 |8-for_ls				|a Bash script that displays the content of the current directory in a list format where only the part of the name after the first dash is displayed |
 |9-to_file_or_not_to_file	|a Bash script that gives you information about the `school` file	|
 |10-fizzbuzz			|a Bash script that displays numbers from 1 to 100. Displays `FizzBuzz` when the number is a multiple of 3 and 5; Displays `Fizz` when the number is multiple of 3; Displays `Buzz` when the number is a multiple of 5; Otherwise, displays the number. The diplay is in the lsit format	|
+|100-read_and_cut			| a Bash script that displays the specific content of the file `/etc/passwd` ie username, user id and home directory path for the user	|
 
