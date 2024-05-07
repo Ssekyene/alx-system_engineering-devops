@@ -9,4 +9,7 @@
 |5-4_bad_luck_8_is_your_chance|a Bash script that loops from 1 to 10 and displays `bad luck` for the 4th, `good luck` for the 8th and `Best School` for the other loop iterations |
 |6-superstitious_numbers	|a Bash script that displays numbers from 1 to 20 and uses a `case` statement to display some text for particular scenarios |
 |7-clock				|a Bash script that displays the time for 12 hours and 59 minutes		|
+|8-for_ls				|a Bash script that displays the content of the current directory in a list format where only the part of the name after the first dash is displayed |
+|9-to_file_or_not_to_file	|a Bash script that gives you information about the `school` file	|
+|10-fizzbuzz			|a Bash script that displays numbers from 1 to 100. Displays `FizzBuzz` when the number is a multiple of 3 and 5; Displays `Fizz` when the number is multiple of 3; Displays `Buzz` when the number is a multiple of 5; Otherwise, displays the number. The diplay is in the lsit format	|
 
