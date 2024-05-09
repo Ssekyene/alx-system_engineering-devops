@@ -14,4 +14,5 @@
 |10-fizzbuzz			|a Bash script that displays numbers from 1 to 100. Displays `FizzBuzz` when the number is a multiple of 3 and 5; Displays `Fizz` when the number is multiple of 3; Displays `Buzz` when the number is a multiple of 5; Otherwise, displays the number. The diplay is in the lsit format	|
 |100-read_and_cut			| a Bash script that displays the specific content of the file `/etc/passwd` ie username, user id and home directory path for the user	|
 |101-tell_the_story_of_passwd	|a Bash script that displays the content of the file `/etc/passwd`, using the `while` loop + IFS |
-
+|102-lets_parse_apache_logs	|a Bash script that displays the visitor IP along with the HTTP status code from the Apache log file |
+|103-dig_the-data			|a Bash script that sorts and computes the frequencies of the visiting IP addresses parsed from the Apache log file	|
