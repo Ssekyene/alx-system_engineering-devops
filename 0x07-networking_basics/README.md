@@ -31,3 +31,8 @@
 * What is a port
 * Memorize SSH, HTTP and HTTPS port numbers
 * What tool/protocol is often used to check if a device is connected to a network
+
+|File				|Description				|
+|-----------------------|-----------------------------------|
+|4-TCP_and_UDP_ports	|a Bash script that displays listening sockets(ports) only, shows the PID and name of the program to which each socket belongs|
+|5-is_the_host_on_the_network| a Bash script that pings an IP address passed as an argument 5 times	|
