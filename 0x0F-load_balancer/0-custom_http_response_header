@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+# Set up server 2
+# Install nginx
+sudo apt-get -y update
+sudo apt-get -y install nginx
+
+# Make file
+echo "Hello World!" | sudo tee /var/www/html/index.html
+
+header="X-Served-By"
+
+hostname=$(hostname)
+
+cat <<EOF | sudo tee  /etc/nginx/conf.d/custom-header.conf
+add_header $header $hostname always;
+EOF
+
+sudo nginx -t
+sudo service nginx restart
