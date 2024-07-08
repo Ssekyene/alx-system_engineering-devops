@@ -12,5 +12,7 @@
 * Load balancer
 * Monitoring
 * Databases
-* Single point of failure
+* Single point of failure(SPOF)
 
+### Note:
+Each file contains a URL for the web infrastructure design with some details about it. Click [here](https://imgur.com/a/DVCHgX5) to access all the designs :smiley:.
