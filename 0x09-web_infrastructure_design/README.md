@@ -16,3 +16,5 @@
 
 ### Note:
 Each file contains a URL for the web infrastructure design with some details about it. Click [here](https://imgur.com/a/DVCHgX5) to access all the designs :smiley:.
+### References
+[https://medium.com/@precious.i.oranye](https://medium.com/@precious.i.oranye)
