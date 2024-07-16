@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-# Bash script that transfers a file from our client to a server
-# ccepts 4 parameters:
+# Bash script that transfers a file from our client to the server's home directory
+# accepts 4 parameters:
 	# The path to the file to be transferred
 	# The IP of the server we want to transfer the file to
 	# The username scp connects with
