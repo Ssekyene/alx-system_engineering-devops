@@ -7,9 +7,10 @@
 	# that contains the string Hello World!
 	# You can’t use systemctl for restarting nginx
 
-sudo apt-get -y update
-sudo apt-get -y install nginx
+apt-get -y update
+apt-get -y install nginx
 
+mkdir -p /var/www/html/
 echo "Hello World!" > /var/www/html/index.html
 
 printf %s "server {
@@ -20,4 +21,4 @@ printf %s "server {
 }
 " > /etc/nginx/sites-available/default
 
-sudo service nginx restart
+service nginx restart
