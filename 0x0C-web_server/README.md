@@ -21,7 +21,7 @@
 ## Tasks
 - [0-transfer_file](./0-transfer_file)
 
-Example
+Example:
 ```
 sylvain@ubuntu$ ./0-transfer_file
 Usage: 0-transfer_file PATH_TO_FILE IP USERNAME PATH_TO_SSH_KEY
@@ -80,15 +80,15 @@ This file contains my domain name
 
 **YOU** can have a **free .tech domain** for 1 year by following these steps:
 
-	- Unlock [GitHub student pack](https://github.com/education). If you have any issue, please contact [GitHub education support](https://support.github.com/)
-	- When registered, access your benefits:
-	- And scroll to **.Tech domain:**
-	- Start to register your domain and checkout
-	- At the Checkout step, please click on “Login with GitHub”
-	- The cost of the domain should be now at $0
-	- You can finalize it by creating an account in .Tech domains
-	- And manage your domain there!
-	- configure your DNS records with an A entry so that your root domain points to your server's IP address 
++ Unlock [GitHub student pack](https://github.com/education). If you have any issue, please contact [GitHub education support](https://support.github.com/)
++ When registered, access your benefits:
++ And scroll to **.Tech domain:**
++ Start to register your domain and checkout
++ At the Checkout step, please click on “Login with GitHub”
++ The cost of the domain should be now at $0
++ You can finalize it by creating an account in .Tech domains
++ And manage your domain there!
++ configure your DNS records with an A entry so that your root domain points to your server's IP address 
 
 Example:
 ```
