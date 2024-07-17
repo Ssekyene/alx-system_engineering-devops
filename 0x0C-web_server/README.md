@@ -20,6 +20,7 @@
 
 ## Tasks
 - [0-transfer_file](./0-transfer_file)
+
 Example
 ```
 sylvain@ubuntu$ ./0-transfer_file
@@ -37,6 +38,7 @@ some_page.html
 sylvain@ubuntu$
 ```
 - [1-install_nginx_web_server](./1-install_nginx_web_server)
+
 Server terminal:
 ```
 root@sy-web-01$ ./1-install_nginx_web_server > /dev/null 2>&1
@@ -70,10 +72,14 @@ sylvain@ubuntu$ sudo su
 root@ubuntu#
 ```
 
-- [2-setup_a_domain_name](./2-setup_a_domain_name)(contains my domain name)
+- [2-setup_a_domain_name](./2-setup_a_domain_name)
+
+This file contains my domain name
+
 [.TECH Domains](https://get.tech/) is one of the top domain providers. They are known for the stability and quality of their DNS hosting solution. Github partnered with .TECH Domains so that you can learn about DNS.
 
 **YOU** can have a **free .tech domain** for 1 year by following these steps:
+
 	- Unlock [GitHub student pack](https://github.com/education). If you have any issue, please contact [GitHub education support](https://support.github.com/)
 	- When registered, access your benefits:
 	- And scroll to **.Tech domain:**
@@ -83,6 +89,7 @@ root@ubuntu#
 	- You can finalize it by creating an account in .Tech domains
 	- And manage your domain there!
 	- configure your DNS records with an A entry so that your root domain points to your server's IP address 
+
 Example:
 ```
 sylvain@ubuntu$ cat 2-setup_a_domain_name
@@ -114,6 +121,7 @@ sylvain@ubuntu$
 When your domain name is setup, please verify the Registrar here: [https://whois.whoisxmlapi.com/](https://whois.whoisxmlapi.com/) and you must see in the JSON response: `"registrarName": "Dotserve Inc"`
 
 - [3-redirection](./3-redirection)
+
 Example:
 ```
 sylvain@ubuntu$ curl -sI 34.198.248.145/redirect_me/
@@ -128,6 +136,7 @@ Location: https://www.youtube.com/watch?v=QH2-TGUlwu4
 sylvain@ubuntu$
 ```
 - [4-not_found_page_404](./4-not_found_page_404)
+
 Example:
 ```
 sylvain@ubuntu$ curl -sI 34.198.248.145/xyz
