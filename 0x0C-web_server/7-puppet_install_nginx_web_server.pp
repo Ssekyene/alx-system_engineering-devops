@@ -1,71 +1,27 @@
-# Install nginx with Puppet
+#Time to practice configuring your server with Puppet! Just as 
+#you did before, we’d like you to install and configure an Nginx
+#server using Puppet instead of Bash. To save time and effort, you
+#should also include resources in your manifest to perform a 301
+#redirect when querying /redirect_me.
 
-# Install Nginx package
+
+# Install Nginx with puppet
 package { 'nginx':
-  ensure => 'installed',
+  ensure => installed,
 }
 
-# Ensure the Nginx service is running and enabled at boot
-service { 'nginx':
-  ensure     => running,
-  enable     => true,
-  subscribe  => File['/etc/nginx/sites-available/default'],
-}
-
-# Ensure the default site configuration file is present and properly configured
-file { '/etc/nginx/sites-available/default':
-  ensure  => file,
-  content => "
-server {
-	listen 80 default_server;
-	listen [::]:80 default_server;
-
-	root /var/www/html;
-	index index.html index.htm;
-
-	server_name _;
-
-	location / {
-      	try_files $uri $uri/ =404;
-	}
-
-	location /redirect_me {
-      	return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;
-	}
-
-	error_page 404 /404.html;
-	location = /404.html {
-		root /var/www/html;
-      	internal;
-	}
-}
- "
-  notify => Service['nginx'],
-
-}
-
-# Create the custom 404.html page
-file { '/var/www/html/404.html':
+file_line { 'install':
   ensure => 'present',
-  content => "Ceci n'est pas une page\n",
-  require => Package['nginx'],
+  path   => '/etc/nginx/sites-available/default',
+  after  => 'listen 80 default_server;',
+  line   => 'rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;',
 }
 
-# Ensure the site is enabled by creating a symlink in sites-enabled
-file { '/etc/nginx/sites-enabled/default':
-  ensure  => link,
-  target  => '/etc/nginx/sites-available/default',
-  notify  => Service['nginx'],
-}
-
-# Ensure the document root directory exists
-file { '/var/www/html':
-  ensure => directory,
-}
-
-# Ensure the index.html file is present with the required content
 file { '/var/www/html/index.html':
-  ensure  => file,
   content => 'Hello World!',
-  notify  => Service['nginx'],
+}
+
+service { 'nginx':
+  ensure  => running,
+  require => Package['nginx'],
 }
