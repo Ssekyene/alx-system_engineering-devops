@@ -20,6 +20,7 @@ sylvain@ubuntu$ ./example.rb 127.0.0.a
 * [Regular expressions - basics](https://www.slideshare.net/neha_jain/introducing-regular-expressions)
 * [Regular expressions - advanced](https://www.slideshare.net/neha_jain/advanced-regular-expressions-80296518)
 * [Rubular is your best friend](https://rubular.com/)
+* [Learn Regular Expressions with simple, interactive exercises](https://regexone.com/)
 
 |File						|Description							|
 |-----------------------------------|-----------------------------------------------------|
