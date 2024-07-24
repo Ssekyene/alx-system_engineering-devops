@@ -1,6 +1,0 @@
-#!/bin/bash
-read -p "Enter file(s): " list
-git add $list
-read -p "Enter commit message: " comt
-git commit -m "$comt"
-git push
