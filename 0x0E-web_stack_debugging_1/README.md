@@ -19,4 +19,4 @@
 * You are not allowed to use wget
 
 > Author
-[Ssekyene Robert](https://github.com/Ssekyene)
+[Ssekyene Robert](https://github.com/Ssekyene/)
