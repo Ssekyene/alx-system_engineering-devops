@@ -19,4 +19,4 @@
 * You are not allowed to use wget
 
 > Author
-[Mithamo Beth](https://github.com/Mythamor/Mythamor)
+[Ssekyene Robert](https://github.com/Ssekyene/)
