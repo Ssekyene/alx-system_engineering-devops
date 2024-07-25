@@ -3,17 +3,17 @@
 
 sudo apt-get -y update
 sudo apt-get -y install haproxy
-sudo chown $USER:USER /etc/haproxy/haproxy.cfg
+sudo chown $USER:$USER /etc/haproxy/haproxy.cfg
 
 echo "
-frontend cryptotechcoder
+frontend airbnb-site
     bind *:80
     mode http
-    default_backend app
+    default_backend my-app
 
-backend app
+backend my-app
     balance roundrobin
-    server 439003-web-01 54.162.232.135:80 check
-    server 439003-web-02 18.234.249.5:80 check" >> /etc/haproxy/haproxy.cfg
+    server 101117-web-01 100.26.231.29:80 check
+    server 101117-web-02 18.214.87.0:80 check" >> /etc/haproxy/haproxy.cfg
 
 sudo service haproxy restart
