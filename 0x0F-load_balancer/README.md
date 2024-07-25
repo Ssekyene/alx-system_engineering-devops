@@ -60,4 +60,11 @@ Accept-Ranges: bytes
 sylvain@ubuntu$
 ```
 >
+- [2-puppet_custom_http_response_header.pp](./2-puppet_custom_http_response_header.pp)
 
+Just as in task #0, we’d like you to automate the task of creating a custom HTTP header response, but with Puppet.
+
+## References
+* [Introduction to load-balancing and HAproxy](https://www.digitalocean.com/community/tutorials/an-introduction-to-haproxy-and-load-balancing-concepts)
+* [HTTP header](https://www.techopedia.com/definition/27178/http-header)
+* [Debian/Ubuntu HAProxy packages](https://haproxy.debian.net/)
