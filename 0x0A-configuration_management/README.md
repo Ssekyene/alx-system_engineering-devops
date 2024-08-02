@@ -24,6 +24,11 @@ sudo gem install puppet-lint
 ```
 For more info visit: [Puppet lint](http://puppet-lint.com/)
 
+For the puppet-lint version 1.1.0 (for compatibility with ruby version 2.3.1p112) you may simply use:
+```
+sudo gem install -v 1.1.0 puppet-lint --no-document
+```
+
 ## Tasks
 - [0-create_a_file.pp](./0-create_a_file.pp)
 
