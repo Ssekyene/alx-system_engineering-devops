@@ -8,10 +8,10 @@
 ## Note on Versioning
 ### Install **puppet**
 ```
-$ apt-get install -y ruby=1:2.7+1 --allow-downgrades
-$ apt-get install -y ruby-augeas
-$ apt-get install -y ruby-shadow
-$ apt-get install -y puppet
+sudo apt-get install -y ruby=1:2.7+1 --allow-downgrades
+sudo apt-get install -y ruby-augeas
+sudo apt-get install -y ruby-shadow
+sudo apt-get install -y puppet
 ```
 
 You do **not** need to attempt to upgrade versions. This project is simply a set of tasks to familiarize you with the basic level syntax which is virtually identical in newer versions of Puppet.
@@ -20,7 +20,7 @@ You do **not** need to attempt to upgrade versions. This project is simply a set
 
 ### Install **puppet-lint**
 ```
-$ gem install puppet-lint
+sudo gem install puppet-lint
 ```
 For more info visit: [Puppet lint](http://puppet-lint.com/)
 
