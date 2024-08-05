@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # Bash script that will display information about subdomains
 # shellcheck disable=SC2086
+# Usage: ./0-world_wide_web domain [subdomain] eg ./0-world_wide_web holberton.online web-02
 
 dom_and_sub () {
 
