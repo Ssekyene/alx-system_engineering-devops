@@ -4,7 +4,8 @@
 
 dom_and_sub () {
 
-	dig $2.$1 | awk 'c&&!--c;/;; ANSWER SECTION:/{c=1}' | awk -v subdom=$2 '{ print "The subdomain " subdom " is a " $4 " record and points to " $5}'
+    # output the line after the pattern matched
+	dig $2.$1 | awk 'c && !--c; /;; ANSWER SECTION:/{c=1}' | awk -v subdom=$2 '{ print "The subdomain " subdom " is a " $4 " record and points to " $5}'
 
 	return 0
 }
@@ -15,7 +16,7 @@ dom_only () {
 		
 	for subdomain in "${subdomains[@]}"
 	do
-		dig $subdomain.$1 | awk 'c&&!--c;/;; ANSWER SECTION:/{c=1}' | awk -v subdom="$subdomain" '{ print "The subdomain " subdom " is a " $4 " record and points to " $5}'
+		dig $subdomain.$1 | awk 'c && !--c; /;; ANSWER SECTION:/{c=1}' | awk -v subdom="$subdomain" '{ print "The subdomain " subdom " is a " $4 " record and points to " $5}'
 	done
 
 	return 0
