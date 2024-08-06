@@ -17,7 +17,7 @@ First things first, let’s get MySQL installed on both your web-01 and web-02 s
 
 ### [How to : ] Fresh Reset and Install mysql 5.7
 
-⚠️ B**Before going through the guide try this command if it gonna install MySQL 5.7 correctly, when you see the white windows you can jump to step 9, and see what to choose :**
+⚠️   **Before going through the guide try this command if it gonna install MySQL 5.7 correctly, when you see the white windows you can jump to step 9, and see what to choose :**
 ```
 sudo wget -O mysql57 https://raw.githubusercontent.com/nuuxcode/alx-system_engineering-devops/master/scripts/mysql57 && sudo chmod +x mysql57 &&  sudo ./mysql57
 ```
@@ -63,6 +63,27 @@ Enter password:
 +----+-------+
 |  1 | Leon  |
 +----+-------+
+ubuntu@229-web-01:~$
+```
+
+4. Quite an experience to live in fear, isn't it?
+
+Before you get started with your primary-replica synchronization, you need one more thing in place. On your **primary** MySQL server (web-01), create a new user for the replica server.
+- The name of the new user should be `replica_user`, with the host name set to `%`, and can have whatever password you’d like. eg `CREATE USER  'replica_user'@'%' IDENTIFIED BY password`
+- `replica_user` must have the appropriate permissions to replicate your primary MySQL server ie `GRANT REPLICATION SLAVE ON *.* TO 'replica_user'@'%'`
+- `holberton_user` will need SELECT privileges on the `mysql.user` table in order to check that `replica_user` was created with the correct permissions ie `GRANT SELECT ON mysql.user TO 'replica_user'@'%'`
+```
+ubuntu@229-web-01:~$ mysql -uholberton_user -p -e 'SELECT user, Repl_slave_priv FROM mysql.user'
++------------------+-----------------+
+| user             | Repl_slave_priv |
++------------------+-----------------+
+| root             | Y               |
+| mysql.session    | N               |
+| mysql.sys        | N               |
+| debian-sys-maint | Y               |
+| holberton_user   | N               |
+| replica_user     | Y               |
++------------------+-----------------+
 ubuntu@229-web-01:~$
 ```
 
