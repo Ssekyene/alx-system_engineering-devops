@@ -27,4 +27,23 @@ If this command did not install 5.7 correctly you can continue reading the follo
 
 [Click here for the guide](https://docs.google.com/document/d/1btVRofXP75Cj90_xq2x8AmzuMPOKq6D_Dt_SCDD6GrU/edit#heading=h.nu0sqigqw1o9)
 
+2. Let us in!
+
+We need you to create a user and password for **both** MySQL databases which will allow the checker access to them.
+
+Create a MySQL user named `holberton_user` on both `web-01` and `web-02` with the host name set to `localhost` and the password `projectcorrection280hbtn`. This will allow the checker to access the replication status on both servers.
+
+Make sure that `holberton_user` has permission to check the primary/replica status of your databases.
+
+Example:
+```
+ubuntu@229-web-01:~$ mysql -uholberton_user -p -e "SHOW GRANTS FOR 'holberton_user'@'localhost'"
+Enter password:
++-----------------------------------------------------------------+
+| Grants for holberton_user@localhost                             |
++-----------------------------------------------------------------+
+| GRANT REPLICATION CLIENT ON *.* TO 'holberton_user'@'localhost' |
++-----------------------------------------------------------------+
+ubuntu@229-web-01:~$
+```
 
