@@ -14,7 +14,7 @@ if __name__ == "__main__":
 
     uid = argv[1]
 
-    #base_url = "https://jsonplaceholder.typicode.com/"
+# base_url = "https://jsonplaceholder.typicode.com/"
     user_url = f"https://jsonplaceholder.typicode.com/users/{uid}"
     todo_url = f"https://jsonplaceholder.typicode.com/todos?userId={uid}"
 
