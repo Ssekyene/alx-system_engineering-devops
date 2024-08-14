@@ -10,44 +10,52 @@ import requests
 from sys import argv
 
 
-def to_json(dict_list):
+def toJson(dictList):
     """
-    converts dictionary to json
+    converts dictionary to json string
     """
-    if dict_list is None or dict_list == []:
-        return "[]"
-    return json.dumps(dict_list)
+    if dictList is None or dictList == {}:
+        return "{}"
+    return json.dumps(dictList)
 
 
-def save_to_file(dict_list, user):
+def saveToJson(dictList, userId):
     """
     writes the json string to a json file
     """
-    with open(user + ".json", "w") as file:
-        file.write(to_json(dict_list))
+    with open(userId + ".json", "w") as file:
+        file.write(toJson(dictList))
 
 
-if __name__ == "__main__":
+def getEmployeeProgress(employeeId):
+    """
+    process employee's todo tasks
+    """
 
-    uid = argv[1]
+    userId = employeeId
+    userUrl = f"https://jsonplaceholder.typicode.com/users/{userId}"
+    todoUrl = f"https://jsonplaceholder.typicode.com/todos?userId={userId}"
 
-    base_url = "https://jsonplaceholder.typicode.com/"
-    user_url = f"https://jsonplaceholder.typicode.com/users/{uid}"
-    todo_url = f"https://jsonplaceholder.typicode.com/todos?userId={uid}"
+    userRes = requests.get(userUrl)
+    userInfo = userRes.json()
+    userName = userInfo.get("username")
 
-    user_res = requests.get(user_url)
-    user_info = user_res.json()
-    user_name = user_info.get("username")
-
-    todo_res = requests.get(todo_url)
-    todo_data = todo_res.json()
+    todoRes = requests.get(todoUrl)
+    todoData = todoRes.json()
 
     data = []
 
-    for task in todo_data:
-        users_info = {"task": task.get("title"),
-                      "completed": task.get("completed"),
-                      "username": user_name}
-        data.append(users_info)
+    for task in todoData:
+        usersDetails = {"task": task.get("title"),
+                        "completed": task.get("completed"),
+                        "username": userName}
+        data.append(usersDetails)
+    return data
 
-        save_to_file({uid: data}, uid)
+
+if __name__ == "__main__":
+    if len(argv) != 2:
+        print("Usage: script <employee id>")
+    else:
+        data = getEmployeeProgress(argv[1])
+        saveToJson({argv[1]: data}, argv[1])
