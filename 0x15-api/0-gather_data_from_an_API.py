@@ -2,6 +2,7 @@
 """
 Script that, using REST API, for a given employee ID,
 returns information about his/her TODO list progress
+Example usage: python3 0-gather_data_from_an_API.py 2
 """
 
 import json
@@ -13,13 +14,13 @@ if __name__ == "__main__":
 
     uid = argv[1]
 
-    base_url = "https://jsonplaceholder.typicode.com/"
+    #base_url = "https://jsonplaceholder.typicode.com/"
     user_url = f"https://jsonplaceholder.typicode.com/users/{uid}"
     todo_url = f"https://jsonplaceholder.typicode.com/todos?userId={uid}"
 
     user_res = requests.get(user_url)
     user_info = user_res.json()
-    user_name = user_info["name"]
+    user_name = user_info.get("name")
 
     todo_res = requests.get(todo_url)
     todo_data = todo_res.json()
@@ -29,9 +30,9 @@ if __name__ == "__main__":
     completed_tasks = []
 
     for task in todo_data:
-        if task["completed"]:
+        if task.get("completed"):
             done_tasks += 1
-            completed_tasks.append(task["title"])
+            completed_tasks.append(task.get("title"))
         total_tasks += 1
 
     print(f"Employee {user_name} is done with tasks({done_tasks}\
