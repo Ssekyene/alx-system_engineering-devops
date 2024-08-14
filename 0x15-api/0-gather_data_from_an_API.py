@@ -10,32 +10,38 @@ import requests
 from sys import argv
 
 
-if __name__ == "__main__":
+def getEmployeeProgress(employeeId):
+    """function to process employee todo tasks"""
 
-    uid = argv[1]
+    userId = employeeId
+    userUrl = f"https://jsonplaceholder.typicode.com/users/{userId}"
+    todoUrl = f"https://jsonplaceholder.typicode.com/todos?userId={userId}"
 
-# base_url = "https://jsonplaceholder.typicode.com/"
-    user_url = f"https://jsonplaceholder.typicode.com/users/{uid}"
-    todo_url = f"https://jsonplaceholder.typicode.com/todos?userId={uid}"
+    userRes = requests.get(userUrl)
+    userInfo = userRes.json()
+    userName = userInfo.get("name")
 
-    user_res = requests.get(user_url)
-    user_info = user_res.json()
-    user_name = user_info.get("name")
+    todoRes = requests.get(todoUrl)
+    todoData = todoRes.json()
 
-    todo_res = requests.get(todo_url)
-    todo_data = todo_res.json()
+    doneTasks = 0
+    totalTasks = 0
+    completedTasks = []
 
-    done_tasks = 0
-    total_tasks = 0
-    completed_tasks = []
-
-    for task in todo_data:
+    for task in todoData:
         if task.get("completed"):
-            done_tasks += 1
-            completed_tasks.append(task.get("title"))
-        total_tasks += 1
+            doneTasks += 1
+            completedTasks.append(task.get("title"))
+        totalTasks += 1
 
-    print(f"Employee {user_name} is done with tasks({done_tasks}\
-/{total_tasks}):")
-    for title in completed_tasks:
+    print(f"Employee {userName} is done with tasks({doneTasks}\
+/{totalTasks}):")
+    for title in completedTasks:
         print(f"\t {title}")
+
+
+if __name__ == "__main__":
+    if len(argv) != 2:
+        print("Usage: script <employee id>")
+    else:
+        getEmployeeProgress(argv[1])
