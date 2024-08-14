@@ -3,6 +3,7 @@
 Script that, using REST API, for a given employee ID,
 returns information about his/her TODO list progress
 export data in the CSV format
+Example usage: python3 1-export_to_CSV.py 2
 """
 
 from csv import DictWriter, QUOTE_ALL
@@ -11,41 +12,50 @@ import requests
 from sys import argv
 
 
-def write_to_csv(data, uid):
+def writeToCSV(data, userId):
     """
     exports json data to csv
     """
-    with open(f"{uid}.csv", "w") as file:
-        headers = ["USER_ID", "USERNAME", "TASK_COMPLETED_STATUS",
-                   "TASK_TITLE"]
-        csv_writer = DictWriter(file, fieldnames=headers, quoting=QUOTE_ALL)
+    with open(f"{userId}.csv", "w") as file:
+        fields = ["USER_ID", "USERNAME", "TASK_COMPLETED_STATUS",
+                  "TASK_TITLE"]
+        csvWriter = DictWriter(file, fieldnames=fields, quoting=QUOTE_ALL)
         for d in data:
-            csv_writer.writerow(d)
+            csvWriter.writerow(d)
     return
 
 
-if __name__ == "__main__":
+def getEmployeeProgress(employeeId):
+    """
+    process employee's todo task progress
+    """
 
-    uid = argv[1]
+    userId = employeeId
 
-    base_url = "https://jsonplaceholder.typicode.com/"
-    user_url = f"https://jsonplaceholder.typicode.com/users/{uid}"
-    todo_url = f"https://jsonplaceholder.typicode.com/todos?userId={uid}"
+    userUrl = f"https://jsonplaceholder.typicode.com/users/{userId}"
+    todoUrl = f"https://jsonplaceholder.typicode.com/todos?userId={userId}"
 
-    user_res = requests.get(user_url)
-    user_info = user_res.json()
-    user_name = user_info.get("username")
+    userRes = requests.get(userUrl)
+    userInfo = userRes.json()
+    userName = userInfo.get("username")
 
-    todo_res = requests.get(todo_url)
-    todo_data = todo_res.json()
+    todoRes = requests.get(todoUrl)
+    todoData = todoRes.json()
 
     data = []
 
-    for task in todo_data:
-        users_info = {"USER_ID": uid,
-                      "USERNAME": user_name,
-                      "TASK_COMPLETED_STATUS": task.get("completed"),
-                      "TASK_TITLE": task.get("title")}
-        data.append(users_info)
+    for task in todoData:
+        usersDetails = {"USER_ID": userId,
+                        "USERNAME": userName,
+                        "TASK_COMPLETED_STATUS": task.get("completed"),
+                        "TASK_TITLE": task.get("title")}
+        data.append(usersDetails)
+    return data
 
-    write_to_csv(data, uid)
+
+if __name__ == "__main__":
+    if len(argv) != 2:
+        print("Usage: script <employee id>")
+    else:
+        data = getEmployeeProgress(argv[1])
+        writeToCSV(data, argv[1])
