@@ -3,6 +3,7 @@
 Script that, using REST API, for a given employee ID,
 returns information about his/her TODO list progress
 export data in the CSV format
+Example usage: python3 2-export_to_JSON.py 2
 """
 
 import json

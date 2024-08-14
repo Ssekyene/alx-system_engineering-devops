@@ -2,7 +2,8 @@
 """
 Script that, using REST API, for a given employee ID,
 returns information about his/her TODO list progress
-export data in the CSV format
+export data in the json format for all the employees
+Example usage: python3 3-dictionary_of_list_of_dictionaries.py
 """
 
 import json
@@ -11,53 +12,59 @@ from sys import argv
 from time import sleep
 
 
-def to_json(dict_list):
+def toJson(dictList):
     """
     converts dictionary to json string
     """
-    if dict_list is None or dict_list == []:
-        return "[]"
-    return json.dumps(dict_list)
+    if dictList is None or dictList == {}:
+        return "{}"
+    return json.dumps(dictList)
 
 
-def save_to_file(dict_list, user):
+def saveToJson(dictList, userId):
     """
     writes the json string to a json file
     """
-    with open(user + ".json", "w") as file:
-        file.write(to_json(dict_list))
+    with open(userId + ".json", "w") as file:
+        file.write(toJson(dictList))
 
 
-if __name__ == "__main__":
+def getEmployeesProgress():
+    """
+    process all the employees' todo tasks
+    """
 
-    user_data = {}
+    usersData = {}
+    usersUrl = f"https://jsonplaceholder.typicode.com/users"
+    usersRes = requests.get(usersUrl)
+    usersInfo = usersRes.json()
 
-    base_url = "https://jsonplaceholder.typicode.com/"
-    users_url = f"https://jsonplaceholder.typicode.com/users"
+    userIds = [u.get("id") for u in usersInfo]
 
-    users_res = requests.get(users_url)
-    users_info = users_res.json()
-    uids = [u["id"] for u in users_info]
-    for i in uids:
-        sleep(1)
-        user_url = f"https://jsonplaceholder.typicode.com/users/{i}"
-        todo_url = f"https://jsonplaceholder.typicode.com/todos?userId={i}"
+    for uid in userIds:
+        # sleep(1)
+        userUrl = f"https://jsonplaceholder.typicode.com/users/{uid}"
+        todoUrl = f"https://jsonplaceholder.typicode.com/todos?userId={uid}"
 
-        user_res = requests.get(user_url)
-        user_info = user_res.json()
-        user_name = user_info.get("username")
+        userRes = requests.get(userUrl)
+        userInfo = userRes.json()
+        userName = userInfo.get("username")
 
-        todo_res = requests.get(todo_url)
-        todo_data = todo_res.json()
+        todoRes = requests.get(todoUrl)
+        todoData = todoRes.json()
 
         data = []
 
-        for task in todo_data:
-            users_info = {"task": task.get("title"),
-                          "completed": task.get("completed"),
-                          "username": user_name}
-            data.append(users_info)
+        for task in todoData:
+            usersDetails = {"task": task.get("title"),
+                            "completed": task.get("completed"),
+                            "username": userName}
+            data.append(usersDetails)
 
-        user_data[i] = data
+        usersData[uid] = data
+    return usersData
 
-    save_to_file(user_data, "todo_all_employees")
+
+if __name__ == "__main__":
+    usersData = getEmployeesProgress()
+    saveToJson(usersData, "todo_all_employees")
