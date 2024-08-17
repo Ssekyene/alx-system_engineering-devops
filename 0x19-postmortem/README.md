@@ -10,7 +10,7 @@ A postmortem is a tool widely used in the tech industry. After any outage, the t
 - And to ensure that the root cause(s) of the outage has been discovered and that measures are taken to make sure it will be fixed.
 
 ## Tasks
-Using one of the web stack debugging project issue or an outage you have personally face, write a postmortem. Most of you will never have faced an outage, so just get creative and invent your own :smilely:
+Using one of the web stack debugging project issue or an outage you have personally face, write a postmortem. Most of you will never have faced an outage, so just get creative and invent your own :smiley:
 
 - [My first postmortem](https://medium.com/@robertssekyene05/my-first-postmortem-report-1c96d210acd0)
 
