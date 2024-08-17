@@ -16,10 +16,9 @@ Using one of the web stack debugging project issue or an outage you have persona
 
 Requirements:
 - Issue Summary (that is often what executives will read) must contain:
-
-        + duration of the outage with start and end times (including timezone)
-        + what was the impact (what service was down/slow? What were user experiencing? How many % of the users were affected?)
-        + what was the root cause
+        - duration of the outage with start and end times (including timezone)
+        - what was the impact (what service was down/slow? What were user experiencing? How many % of the users were affected?)
+        - what was the root cause
 
 - Timeline (format bullet point, format: time - keep it short, 1 or 2 sentences) must contain:
 
