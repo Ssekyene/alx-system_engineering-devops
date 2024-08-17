@@ -12,7 +12,7 @@ A postmortem is a tool widely used in the tech industry. After any outage, the t
 ## Tasks
 Using one of the web stack debugging project issue or an outage you have personally face, write a postmortem. Most of you will never have faced an outage, so just get creative and invent your own :smiley:
 
-- [My first postmortem](https://medium.com/@robertssekyene05/my-first-postmortem-report-1c96d210acd0)
+1. [My first postmortem](https://medium.com/@robertssekyene05/my-first-postmortem-report-1c96d210acd0)
 
 Requirements:
 - Issue Summary (that is often what executives will read) must contain:
@@ -38,5 +38,18 @@ Requirements:
 
 - Be brief and straight to the point, between 400 to 600 words
 
+2. [Make people want to read your postmortem](https://medium.com/@robertssekyene05/my-first-postmortem-report-1c96d210acd0) (_just added a cover page_)
+
+We are constantly stormed by a quantity of information, it’s tough to get people to read you.
+
+Make your post-mortem attractive by adding humour, a pretty diagram or anything that would catch your audience attention.
+
 While postmortem format can vary, stick to this one so that you can get properly reviewed by your peers.
+
+Please, remember that these blogs must be written in English to further your technical ability in a variety of settings.
+
+## References
+- [Incident Report, also referred to as a Postmortem](https://sysadmincasts.com/episodes/20-how-to-write-an-incident-report-postmortem) (_an example of an outage_)
+- [The importance of an incident postmortem process](https://www.atlassian.com/incident-management/postmortem)
+- [What is an Incident Postmortem?](https://www.pagerduty.com/resources/learn/incident-postmortem/)
 
