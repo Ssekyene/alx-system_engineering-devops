@@ -245,7 +245,8 @@ Requirements:
 The file [5-app_server-nginx_config](./5-app_server-nginx_config) is a copy of Nginx config file for this task.
 
 After loading, your website should look like this:
-![task-6.PNG]()
+
+![task-6.PNG](task-6.PNG)
 
 7. #### Deploy it!
 Once you’ve got your application server configured, you want to set it up to run by default when Linux is booted. This way when your server inevitably requires downtime (you have to shut it down or restart it for one reason or another), your `Gunicorn` process(es) will start up as part of the system initialization process, freeing you from having to manually restart them. For this we will use `systemd`. You can read more about `systemd` in the documentation posted in the references of this project but to put it succinctly, it is a system initialization daemon for the Linux OS (amongst other things). For this task you will write a `systemd` script which will start your application server for you. As mentioned in the video at the top of the project, you do not need to create a Unix socket to bind the process to.
